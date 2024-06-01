@@ -1,0 +1,46 @@
+package day06.ex07;
+
+public class Member {
+  //1. 필드명
+  String name;
+  int age;
+  String tel;
+  //생성자 - 기본생성자 Member() - 인스턴스 객체 선언
+  // 가장먼저 실행되는 부분
+  //2. 사용자 정의 생성자 - 클래스명과 동일
+  Member( String name, int age, String tel){
+    System.out.println("1. 생성자 호출");
+    this.name = name;
+    this.age = age;
+    this.tel = tel;
+  }
+  //3. 메소드
+}
+
+
+///////////////////////////////////////
+
+package day06.ex07;
+
+import day06.ex03.Person;
+
+public class MemberTest {
+  public static void main(String[] args) {
+      Member member1 = new Member("홍길동", 20, "010-0000-1111"); // 객체생성 - 메모리할당 - 생성자호출
+      Member member2 = new Member("강호동", 22, "010-0000-1111"); // 객체생성 - 메모리할당 - 생성자호출
+      Member member3 = new Member("김고은", 23, "010-0000-1111");
+      // 객체생성 - 메모리할당 - 생성자호출
+
+    Member[] member= new Member[]{member1,member2,member3};
+    //향상된 for
+    for( Member m:member) {
+      System.out.println("-------------------");
+      System.out.println("이름:" + m.name );
+      System.out.println("나이:" + m.age);
+      System.out.println("연락처:" + m.tel);
+    }
+
+    System.out.println("-------------------");
+    System.out.println("인스턴스(객체) 실행");
+  }
+}
